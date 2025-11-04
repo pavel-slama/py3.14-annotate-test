@@ -30,5 +30,10 @@ class AnnotatedTest(BaseModel):
 
 
 # Raises exception
-def test_simple_fixture() -> None:
+def test_annotated() -> None:
     assert 1 + 1 == 2
+
+
+def test_user_uncaught_exception() -> None:
+    # Without "User Uncaught Exceptions" checked, debugger won't stop on this genuine exception
+    raise ValueError("This is a test exception in an annotated test function.")
